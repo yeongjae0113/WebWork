@@ -1,0 +1,61 @@
+.loginh {
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    text-align: center;
+    background-color:  #eefaeb;
+}
+#loginform {
+    margin-bottom: 50px;
+}
+#input {
+    width: 265px; 
+    height: 25px;
+}
+a {
+    text-decoration: none;
+}
+#idpw {
+    float: left;
+}
+#idpw1 {
+    width: 20px;
+}
+#idpw2 {
+    font-size: 12px; 
+    float: right;
+}
+#loginbutton {
+    width: 300px; 
+    height: 43px; 
+    border: 2px solid black;
+    margin-right: 6px;
+}
+#kakao, #naver, #google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 43px;
+    cursor: pointer;
+}
+#kakao {
+    background-color: #FAE100;
+}
+#naver {
+    background-color:rgb(0, 199, 60);
+}
+#google {
+    background-color: white;
+}
+#kakao img {
+    width: 35px;
+}
+#naver img {
+    margin-right: 15px;
+    width: 35px;
+}
+#google img {
+    margin-right: 27px;
+    width: 35px;
+}

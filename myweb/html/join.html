@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imgument</title>
+
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/response.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/join.css">
+</head>
+
+<body>
+    <script src="../javascript/menu.js"></script>
+    <div id="header"></div>
+
+    <div class="divjoin">
+        <div class="divjoin1">
+            <form id="signupForm" action="../html/login.html" method="GET" onsubmit="return joinForm()">
+                <table>
+                    <h1 id="h1">RESERVE</h1>
+                    <tr>
+                        <th id="th">아이디</th>
+                    </tr>
+                    <tr>
+                        <td><input class="joininput" type="text" id="userid" placeholder="아이디를 입력하세요.">
+                            <span id="useridError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="th">비밀번호</th>
+                    </tr>
+                    <tr>
+                        <td><input class="joininput" type="password" id="password" placeholder="비밀번호를 입력하세요">
+                            <span id="passwordError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="th">비밀번호 확인</th>
+                    </tr>
+                    <tr>
+                        <td><input class="joininput" type="password" id="passwordConfirm" placeholder="비밀번호 확인">
+                            <span id="passwordConfirmError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="th">이메일주소</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="email"> @
+                            <select id="emailDomain">
+                                <option value="">선택</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="hanmail.com">hanmail.com</option>
+                            </select>
+                            <span id="emailError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="th">이름</th>
+                    </tr>
+                    <tr>
+                        <td><input class="joininput" type="text" id="name"><span id="nameError" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <th id="th">생년월일 8자리</th>
+                    </tr>
+                    <tr>
+                        <td><input class="joininput" type="text" id="birthdate" pattern="\d{8}">
+                            <span id="birthdateError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="th">휴대전화</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="carrier">
+                                <option value="">선택</option>
+                                <option value="SKT">SKT</option>
+                                <option value="KT">KT</option>
+                                <option value="LG">U+</option>
+                                <option value="cheap">알뜰폰</option>
+                            </select>
+                            <select id="phone">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                            </select>
+                            -
+                            <input type="tel" id="phone1" name="phone1" size="3">
+                            -
+                            <input type="tel" id="phone2" name="phone2" size="3">
+                            <span id="phoneError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="smsConsent" checked> SMS 수신동의
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" id="joinbutton">가입하기</button>
+                        </td>
+                    </tr>
+                </table>
+                <script src="../javascript/join.js"></script>
+                <table>
+                    <tr>
+                        <td><button id="kakao" onclick=""><img src="../img/카톡로그인.png" alt="">카카오톡 로그인</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="naver"><img src="../img/네이버로그인.png" alt="">네이버
+                                로그인</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button id="google"><img src="../img/구글로그인.webp" alt="">구글
+                                로그인</button>
+                        </td>
+                    </tr>
+                </form>
+                </table>
+        </div>
+
+
+
+
+        <div id="footer"></div>
+
+
+
+    </div>
+    <script src="../javascript/header.js"></script>
+    <script src="../javascript/footer.js"></script>
+    <script src="../javascript/board.js"></script>
+    <script src="../javascript/reserve.js"></script>
+</body>
+
+</html>

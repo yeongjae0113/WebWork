@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="index.css">
+<title>풋살장장 예약사이트</title>
+<style>
+</style>
+</head>
+<body>
+    <div id="login">
+        <!-- <a href="login.html">로그인</a> -->
+        <!-- <a href="join.html">회원가입</a> -->
+    </div>
+<h3>예약</h3>
+    구장: <input type="text" name="MINCLASSNM" placeholder="검색할 풋살장 입력" value=""><br>
+  
+    <button type="button" onclick="loadData()">정보 가져오기</button>
+    <h2>검색결과</h2>
+    <table id="demoJSON"></table>
+
+    <script>
+        var api_key = "6e5a58717364756439304e45686c71";  // 자신의 키값 입력하기!
+        var req_url = `http://openAPI.seoul.go.kr:8088/${api_key}/json/ListPublicReservationSport/`;
+
+        function loadData() {
+            let MINCLASSNM = document.getElementsByName('MINCLASSNM')[0].value.trim();
+            let qryStr = encodeURIComponent(MINCLASSNM);
+
+            // JSON
+            let url = `${req_url}1/5/${qryStr}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(jsonObj => parseJSON(jsonObj));
+        }
+
+        function parseJSON(jsonObj) {
+            const table = [];
+            table.push("<tr><th>구장</th><th>구장명</th><th>지역명</th><th>이용시작시간</th><th>이용종료시간</th><th>이미지</th></tr>");
+
+            if(jsonObj.ListPublicReservationSport && jsonObj.ListPublicReservationSport.row) {
+                jsonObj.ListPublicReservationSport.row.forEach(function(list) {
+                    table.push(`
+                    <div id="div1">
+                    <tr onclick="reserve('${list.MINCLASSNM}')">
+                        <td>${list.MINCLASSNM}</td>
+                        <td>${list.PLACENM}</td>
+                        <td>${list.AREANM}</td>
+                        <td>${list.V_MIN}</td>
+                        <td>${list.V_MAX}</td>
+                        <td><img src="${list.IMGURL}" alt="${list.MINCLASSNM} 이미지" style="width:100px; height:auto;"></td>
+                    </tr>
+                    </div>
+                    `);
+                });
+            }
+// JavaScript에서 클래스 추가
+// document.querySelectorAll('#div1 tr').forEach(tr => tr.classList.add('custom-style'));
+
+            document.getElementById('demoJSON').innerHTML = table.join('\n');
+        }
+
+        function reserve(name) {
+            alert(name + " 예약을 시작합니다.");
+            // 여기에 예약 로직을 추가할 수 있습니다.
+        }
+
+    </script>
+    
+</body>

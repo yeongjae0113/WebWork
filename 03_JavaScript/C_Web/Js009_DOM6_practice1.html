@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM - 연습</title>
+<style>
+table {width: 500px;}
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	font-size: 1.2em;
+}
+th {width: 50%;}
+th, td {
+	padding: 10px;
+}
+td{
+	background-color: orange;
+}
+
+#table1 div, #table1 input{
+	width: 100%;
+	font-size: 1.2em;
+	padding: 2px;
+	margin: 0;
+}
+
+#table1 input {
+	border: none;
+}
+
+.hidden {  /* class="hidden" 이면 보이지 않는다 */
+	display: none;
+}
+
+</style>
+</head>
+
+<body>
+<div>
+<table id="table1">
+	<tr>
+		<th>이름</th>
+		<th>아이디</th>
+	</tr>
+	<tr>
+		<td>
+			<div>홍길동</div>
+			<input type="text">
+		</td>
+		<td>
+			<div>Mr.Hong</div>
+			<input type="text">
+		</td>
+	</tr>
+</table>
+</div>
+
+<script>
+// 위 HTML 에 어떠한 inline js 코드도 삽입하지 않고 이 안에서 페이지의 모든 동작을 정의해보자
+
+for(e of document.querySelectorAll("#table1 div")){
+	e.addEventListener("click", function(){
+
+		let txt = this.innerHTML.trim();
+
+		this.classList.add('hidden');
+
+		let input = this.nextElementSibling;
+		input.classList.remove('hidden');
+
+		input.value = txt;
+		input.focus();
+	});
+}
+
+function switchInput(e)	{
+
+	let txt = e.value.trim();
+
+	e.classList.add('hidden');
+
+	let div = e.previousElementSibling;
+	div.classList.remove('hidden');
+
+	div.innerHTML = txt;
+
+}
+
+
+for(e of document.querySelectorAll("#table1 input")){
+	e.classList.add('hidden');  // 최초 로딩시 input 안보이게 하기
+
+	e.addEventListener("focusout", function(){
+		switchInput(this);
+		
+	});	
+
+	e.addEventListener("keyup", function(event){
+		(event.keyCode == 13) && switchInput(this);		// keyCode == 13 이 엔터를 의미한다
+	});
+
+}
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

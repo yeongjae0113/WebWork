@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JSON 데이터 다루기</title>
+	<style>
+		table,
+		td,
+		th {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table {
+			width: 100%;
+		}
+	</style>
+</head>
+
+<script src="JS/Js006_Data.js"></script>
+
+<body>
+
+	<script>
+		
+		document.write("<table>");
+		document.write(`<h3.style.left = 0>60개의 매물이 있습니다</h3>`);
+		
+	
+		document.write("<thead><th>no</th><th>타이틀</th><th>월세</th><th>보증금</th>")
+
+		document.write("<tbody>")
+		for (let row = 0; row < 60; row++) {
+			document.write('<tr>');
+			for (let col = 1; col <= 4; col++) {
+				if (col == 1) {
+					document.write(`<td>${row + 1}</td>`)
+				} 
+				else if (col == 2) {
+					document.write(`<td>${x.items[row].item.title}</td>`);
+				}
+				else if (col == 3) {
+					document.write(`<td>${x.items[row].item.rent}</td>`)
+				}
+				else if (col == 4) {
+					document.write(`<td>${x.items[row].item.deposit}</td>`)
+				}
+			}
+			document.write('</tr>');
+		}
+		document.write("</tbody>")
+
+		document.write("</table>");
+
+	</script>
+
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

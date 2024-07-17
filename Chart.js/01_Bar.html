@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Type</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+    <h2>Bar chart</h2>
+    <div>
+        <canvas id="BarChart1"></canvas>
+    </div>
+</body>
+<script>
+    const barChart1 = document.getElementById('BarChart1');
+
+    const labels = ['1월', '2월', '3월', '4월', '5월', '6월', '7월'];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: '월매출',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132)',
+                'rgba(255, 159, 64)',
+                'rgba(255, 205, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(54, 162, 235)',
+                'rgba(153, 102, 255)',
+                'rgba(201, 203, 207)'
+            ],
+            borderWidth: 1,
+        }],
+    };
+
+    const config = {
+        type: 'bar',  // bar chart
+        data: data,   // 시각화할 데이터들
+    };
+
+    const chart1 = new Chart(barChart1, config);
+</script>
+
+<script>
+    // 데이터에 변화를 주면 chart 도 변한다
+
+    function updateData(ms) {   // ms => 몇초 간격으로 변할것인가 밀리세컨드
+        return new Promise(resolve => {
+            // setTimeout(함수, ms);    // ms 이후에 함수 호출
+            setTimeout(() => {
+                // console.log('호출됨');
+
+                data.datasets[0].data = [];
+                for (i = 0; i < 7; i++) {
+                    data.datasets[0].data.push((Math.random() * 10) + 1);
+                }
+                chart1.update();    // 차트 업데이트
+                setTimeout(() => {updateData(ms)});
+            }, ms);
+        });
+    }
+    async function asyncP() {
+        await updateData(5000);
+    }
+
+    asyncP();
+
+</script>
+
+</html>

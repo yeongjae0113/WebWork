@@ -1,0 +1,41 @@
+#main-logo {
+  bottom: 50px;
+  width: 130px;
+  height: 110px;
+  float: left;
+}
+
+#top_menu {
+  border-bottom: 2.5px solid;
+  border-bottom-color: mediumseagreen;
+  display: flex;  
+  /* 네비게이션 링크들이 한 줄로 나오도록 설정 */
+  /* 링크들 사이의 간격을 동일하게 설정 */
+  height: 90px;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.class817 {
+  display: flex;
+  width: 100%;
+}
+
+#i {
+  width: 100px;
+  list-style-type: none;
+  align-content: center;
+  width: 100%;
+  font-size: auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: mediumseagreen;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  #top_menu {
+      font-size: 81%;
+  }
+}

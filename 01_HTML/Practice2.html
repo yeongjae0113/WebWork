@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>RWD 연습</title>
+
+   <style>
+      * {
+      box-sizing: border-box;   /* RWD 필수 */
+      }
+
+      h2{
+         margin: 0;
+         padding: 0;
+         text-align: center;
+      }
+      h2.header {
+         color: white;
+      }
+
+      .a{
+         background-color: #B4A7D5;
+      }
+      .b{
+         background-color: #9900FF;
+      }
+      .c{
+         background-color: #02FFFF;
+      }
+      .d{
+         background-color: #FFFFFF;
+      }
+      .e{
+         background-color: #FCE5CD;
+      }
+      .f{
+         background-color: #4DB6AC;
+      }
+      .g{
+         background-color: #F9CB9C;
+      }
+      .h{
+         background-color: #FED966;
+      }
+
+      .clear{
+         clear: both;
+      }
+      
+      [class*="col-"]{
+         float: left;
+         /* padding: 15px; */
+      }
+      .col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+      .col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+      .first-height {height: 180px;}
+      .second-height {height: 90px;}
+      .therd-height {height: 60px;}
+
+      /* 브라우저 윈도우가 700 이하이면 적용 */
+      @media screen and (max-width: 768px){
+         /* Table */
+         .col-m-1 {width: 8.33%;;}
+         .col-m-2 {width: 16.66%; }  
+         .col-m-3 {width: 25%;}
+         .col-m-4 {width: 33.33%;}
+         .col-m-5 {width: 41.66%;}
+         .col-m-6 {width: 50%;}
+         .col-m-7 {width: 58.33%;}
+         .col-m-8 {width: 66.66%;}
+         .col-m-9 {width: 75%;}
+         .col-m-10 {width: 83.33%;}
+         .col-m-11 {width: 91.66%;}
+         .col-m-12 {width: 100%;}
+         .first-m-height {height: 180px;}
+         .second-m-height {height: 90px;}
+         .therd-m-height {height: 60px;}
+      }
+
+      /* 브라우저 윈도우가 600 이하이면 적용 */
+      @media screen and (max-width: 600px){
+         .none {display: none;}
+         .col-mm-4 {width: 33.33%;}
+         .col-mm-12 {width: 100%;}
+         .first-mm-height {height: 180px;}
+         .second-mm-height {height: 90px;}
+         .therd-mm-height {height: 60px;}
+      }
+
+
+   </style>
+
+</head>
+
+<body>
+   <!-- header -->
+   <span>
+      <h2 id="a" class="header a col-4 col-m-2 none therd-height therd-m-height therd-mm-height">a</h2>
+   </span>
+   <sapn>
+      <h2 id="b" class="header b col-8 col-m-10 col-m-10 col-mm-12 therd-height therd-m-height therd-mm-height">b</h2>
+   </span>
+   <!-- header end -->
+   <span>
+      <h2 id="c" class="c col-2 col-m-2 col-mm-12 first-height first-m-height therd-mm-height">c</h2>
+   </span>
+   <span>
+      <h2 id="d" class="d col-6 col-m-8 col-mm-12 first-height first-m-height second-mm-height">d</h2>
+   </span>
+   <span>
+      <h2 id="e" class="e col-4 col-m-2 col-mm-4 therd-height second-m-height therd-mm-height">e</h2>
+   </span>
+   <span>
+      <h2 id="f" class="f col-4 col-m-2 col-mm-4 therd-height second-m-height therd-mm-height">f</h2>
+   </span>
+   <span>
+      <h2 id="g" class="g col-4 col-m-3 col-mm-4 therd-height therd-m-height therd-mm-height">g</h2>
+   </span>
+   <span>
+      <h2 id="h" class="h col-12 col-m-9 col-mm-12 therd-height therd-m-height therd-mm-height">h</h2>
+   </span>
+
+
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+<script>
+   function WindowWidth() {
+      if (window.innerWidth <= 600) {
+         document.getElementById('a').textContent = 'a:';
+         document.getElementById('b').textContent = 'b:12';
+         document.getElementById('c').textContent = 'c:12';
+         document.getElementById('d').textContent = 'd:12';
+         document.getElementById('e').textContent = 'e:4';
+         document.getElementById('f').textContent = 'f:4';
+         document.getElementById('g').textContent = 'g:4';
+         document.getElementById('h').textContent = 'h:12';
+      }
+      else if (window.innerWidth <= 768) {
+         document.getElementById('a').textContent = 'a:2';
+         document.getElementById('b').textContent = 'b:10';
+         document.getElementById('c').textContent = 'c:2';
+         document.getElementById('d').textContent = 'd:8';
+         document.getElementById('e').textContent = 'e:2';
+         document.getElementById('f').textContent = 'f:2';
+         document.getElementById('g').textContent = 'g:3';
+         document.getElementById('h').textContent = 'h:9';
+      }
+      else{
+         document.getElementById('a').textContent = 'a:4';
+         document.getElementById('b').textContent = 'b:8';
+         document.getElementById('c').textContent = 'c:2';
+         document.getElementById('d').textContent = 'd:6';
+         document.getElementById('e').textContent = 'e:4';
+         document.getElementById('f').textContent = 'f:4';
+         document.getElementById('g').textContent = 'g:4';
+         document.getElementById('h').textContent = 'h:12';
+      }
+   }
+   // 화면 크기 변경 시 내용 조정
+   window.addEventListener('resize', WindowWidth);
+        // 페이지 로딩 시 내용 초기 설정
+    window.addEventListener('load', WindowWidth);
+</script>
+
+</html>

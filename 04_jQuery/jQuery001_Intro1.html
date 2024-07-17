@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Intro</title>
+</head>
+
+<script>
+// TODO : 문서 로딩이 끝나면 수행하는 함수 등록
+window.addEventListener('load', hideP);
+
+function hideP(){
+	
+	for(e of document.getElementsByTagName('p')){
+		// e.addEventListener('click', function(){
+		// 	this.style.display = 'none';
+		// });
+
+		e.addEventListener('click', hideElement);
+	}
+
+} // end hideP()
+
+function hideElement()
+{
+	this.style.display = 'none';
+}
+
+// 함수나 변수명으로 $ 사용 가능
+$ = function(){
+	document.write('<p>hello</p>');
+};
+$();
+
+</script>
+
+<body>
+
+<p>없어지는 마술을 보여줄께.</p>
+<p>요것도.</p>
+<p>따다~~!</p>
+
+</body>
+</html>

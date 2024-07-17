@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript 폼 검증 연습</title>
+
+    <style>
+        p {
+            border: solid 1px;
+        }
+    </style>
+</head>
+
+<script>
+    function checkAgree() {
+        frm = document.forms['regist'];
+        let arr = [];
+        // arr = document.forms['regist']['agree'];
+        if (Array.from(frm['agree']).every(i => i.checked)) {
+            frm.submit();
+            return;
+        } else {
+            for (let i = 0; i < 3; i++) {
+                if (!frm[i].checked) {
+                    arr.push(frm[i].value);
+                  
+                }
+            }
+            alert(`${arr.join(', ')}항목에 동의하셔야 합니다`);
+        }
+    }
+
+</script>
+
+<body>
+    <h3>회원가입 동의 약관</h3>
+    <h3>아래 체크박스를 다 클릭했을때만 제출이 되도록 하고</h3>
+    <h3>하나라도 체크 안되면 체크 안되었다는 팝업을 띄웁니다.</h3>
+    <form name="regist" action="https://www.w3schools.com/action_page.php">
+        <p>약관내용1 <br /> 어쩌구 저쩌구</p>
+        <input type="checkbox" name="agree" value="어쩌구 동의" /> 약관에 동의하셔야 합니다 (필수)
+        <p>약관내용2 <br /> 주저리 주저리</p>
+        <input type="checkbox" name="agree" value="주저리 동의" /> 약관에 동의하셔야 합니다 (필수)
+        <p>약관내용3<br /> 왈가 왈부</p>
+        <input type="checkbox" name="agree" value="왈가왈부 동의" /> 약관에 동의하셔야 합니다 (필수)
+        <br />
+        <input type="button" value="제출" onclick="checkAgree()">
+    </form>
+    <h3 id="result"></h3>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영수증 확인 폼</title>
+
+    <style>
+        #receipt {
+            width: 700px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        #receiptOption,
+        th,
+        td {
+            border: 1px solid #aaaaaa;
+            border-collapse: collapse;
+            padding: 0;
+        }
+
+        tr {
+            height: 40px;
+        }
+
+        th {
+            width: 180px;
+            text-align: left;
+            padding: 8px;
+            background-color: rgb(198, 214, 235);
+        }
+
+        #receiptOption {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+
+        .longText {
+            width: 300px;
+            height: 20px;
+            margin: 5px 10px;
+        }
+
+        .shortText {
+            width: 60px;
+            height: 30px;
+            margin: 5px 20px;
+        }
+
+        #btn {
+            font-size: 16px;
+            width: 80px;
+            height: 35px;
+            color: white;
+            background-color: rgb(54, 104, 168);
+            display: block;
+            margin: auto;
+        }
+
+        /* 처음 시작은 구매자명과 결제금액만 보이게 */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="receipt">
+        <h3>영수증 확인을 위해 아래의 정보를 정확히 입력해 주시기 바랍니다.</h3>
+        <br>
+        <div id="receiptOption">
+            <input type="radio" name="option" value="구매자명+금액" checked>구매자명 + 금액
+            <input type="radio" name="option" value="이메일">이메일
+            <input type="radio" name="option" value="카드번호">카드번호
+        </div>
+        <form class="inner_table" name="frm1" action="https://www.w3schools.com/action_page.php" method="get">
+            <table>
+                <tr>
+                    <th>구매자명</th>
+                    <td><input type="text" class="longText" name="name" value=""></td>
+                </tr>
+                <tr>
+                    <th>결제금액</th>
+                    <td><input type="number" class="longText" name="price" value=""></td>
+                </tr>
+            </table>
+        </form>
+        <form class="inner_table hidden" name="frm2" action="https://www.w3schools.com/action_page.php" method="get">
+            <table>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text" class="longText" name="email" value=""></td>
+                </tr>
+            </table>
+        </form>
+        <form class="inner_table hidden" name="frm3" action="https://www.w3schools.com/action_page.php" method="get">
+            <table>
+                <tr>
+                    <th>카드번호</th>
+                    <td>
+                        <input type="number" class="shortText" name="cardNum" value="">-
+                        <input type="number" class="shortText" name="cardNum" value="">-
+                        <input type="number" class="shortText" name="cardNum" value="">-
+                        <input type="number" class="shortText" name="cardNum" value="">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <input type="submit" id="btn" value="제출">
+    </div>
+</body>
+
+<script>
+    // 위의 HTML 은 수정하지 마세요
+    // 위의 HTML 안에 inline JS 코드 없이 동작할수 있도록 아래에 작성해보세요
+
+    
+    let frm1 = document.forms['frm1'];
+    let frm2 = document.forms['frm2'];
+    let frm3 = document.forms['frm3'];
+    let radiobtn = document.getElementsByName('option');
+
+    // 라디오 버튼 변경 이벤트 처리
+    for (let radio of radiobtn) {
+        radio.addEventListener('change', function () {
+            if (radio === radiobtn[0]) { // 구매자명 + 금액 폼 보이고 나머지 숨김 처리
+                frm1.classList.remove('hidden');
+                frm2.classList.add('hidden');
+                frm3.classList.add('hidden');
+            } else if (radio === radiobtn[1]) { // 이메일 폼 보이고 나머지 숨김 처리
+                frm1.classList.add('hidden');
+                frm2.classList.remove('hidden');
+                frm3.classList.add('hidden');
+            } else if (radio === radiobtn[2]) { // 카드번호 폼 보이고 나머지 숨김 처리
+                frm1.classList.add('hidden');
+                frm2.classList.add('hidden');
+                frm3.classList.remove('hidden');
+            }
+        });
+    }
+
+    // 각 폼의 유효성 검사 
+    function chkfrm(form) {
+    if (form === frm1) {   // 구매자명 + 결제금액 유효성 검사
+        let name = form.querySelector('[name="name"]').value;
+        let price = form.querySelector('[name="price"]').value;
+
+        // 구매자명 유효성 검사 실패시 alert 출력하고 해당 부분 focus 해줌.
+        if (name.trim() === '') {
+            alert('구매자명을 입력하세요.');
+            form.querySelector('[name="name"]').focus();
+            return false; 
+        }
+
+        // 결제금액 유효성 검사 실패시 alert 출력하고 해당 부분 focus 해줌.
+        if (price.trim() === '') {
+            alert('결제금액을 입력하세요.');
+            form.querySelector('[name="price"]').focus();
+            return false;
+        }
+    } else if (form === frm2) { // 이메일 유효성 검사
+        let email = form.querySelector('[name="email"]').value;
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // 이메일 유효성 검사 실패시 alert 출력하고 해당 부분 focus 해줌.
+        if (!regex.test(email)) {
+            alert('이메일을 입력하세요.');
+            form.querySelector('[name="email"]').focus();
+            return false; 
+        }
+    } else if (form === frm3) { // 카드번호 유효성 검사
+        let cardNums = form.querySelectorAll('[name="cardNum"]');
+        let valid = true;
+
+        for (let input of cardNums) {
+            let cardNum = input.value.trim();
+
+            // 카드번호 유효성 검사 실패시 alert 출력하고 16자리 중 양식이 올바르지 못한곳에 focus 해줌.
+            if (cardNum === '' || isNaN(cardNum) || cardNum.length !== 4) {
+                alert('카드번호를 입력하세요.');
+                input.focus();
+                valid = false;
+                break; // 유효성 검사 실패 시 루프 종료
+            }
+        }
+        if (!valid) {
+            return false;
+        }
+    }
+    return true;
+}
+
+    // 제출 버튼 클릭 시 선택된 양식 제출
+    document.getElementById('btn').addEventListener('click', function (event) {
+    let selectfrm;
+
+    for (let radio of radiobtn) {
+        if (radio.checked) {
+            if (radio === radiobtn[0]) {
+                selectfrm = frm1;
+            } else if (radio === radiobtn[1]) {
+                selectfrm = frm2;
+            } else if (radio === radiobtn[2]) {
+                selectfrm = frm3;
+            }
+        }
+    }
+
+    // 각 폼에 대해 유효성 검사.
+    let valid = chkfrm(selectfrm);
+
+    // 각 폼의 양식에 맞게 제대로 입력했으면 
+    // 유효성 여부를 확인하고 제출함.
+    if (valid) {
+        selectfrm.submit();
+    }
+});
+
+
+</script>
+
+</html>

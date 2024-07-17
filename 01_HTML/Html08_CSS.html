@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+<style>
+    /* 이것이 CSS 주석 */
+    /* selector {property:value; prorperty:value; ...} */
+
+    body {background-color: powderblue;}
+    h1 {color: blue;}
+    p {color: red;}
+</style>
+
+<link rel="stylesheet" href="CSS/styles.css">
+
+<style>
+    /* id가 p01인 element (id selector) */
+    #p01 {
+        color: magenta;
+        border: 1px solid brown;
+    }
+
+    /*  class 에 error 를 갖고 있는 element */
+    .error {
+        background-color: darkorange;
+    }
+
+    p {
+        color: blue;
+    }
+
+</style>
+
+
+
+</head>
+
+<!--
+CSS : Cascading Style Sheets.
+ HTML elements 들이 화면상에 어떻게 표시될지 기술함.
+ 
+적용방식 3가지
+1. Inline : 시작태그에 style 속성과 함께 기술
+2. Internal : <style> 태그로 기술
+3. External : 외부 파일 (*.css) 로 만들고 연결
+-->
+
+<!--
+    HTML : 문서의 '구조'
+    CSS : 문서의 '스타일'
+    JS : 문서의 '동작'
+-->
+
+
+<body>
+
+<h1>This is a heading1</h1>
+<p>This is a paragraph1</p>
+<h1>This is a heading2</h1>
+<p tyle="color:yellow;"></pstyle> is a paragraph
+
+<hr>
+
+
+<h1>This is a heading3</h1>
+<p>This is a paragraph3</p>
+<p id="">I am different1</p>
+
+<hr>
+
+<p>This is a paragraph4</p>
+<p>This is a paragraph5</p>
+<p class="error">I am different2.</p>
+<p>This is a paragraph6</p>
+<p class="error">I am different too3.</p>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

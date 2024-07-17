@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    table {
+        border-collapse: collapse;
+        height: 500px;
+        width: 600px;
+    }
+
+    
+    td, tr {
+        border: 4px solid black;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    td#a { width: 80px; background-color: blue;}
+    td#a1 { width: 105px;}
+    /* td#b1 { width: 140px;} */
+    
+    /* td#a {     => a id 가져올 때
+    } */
+
+    /* .ad {      => ad 클래스 가져올 때
+    } */
+</style>
+
+</head>
+<body>
+    <table>
+        <!-- <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 25%;">
+            <col style="width: 25%;">
+        </colgroup> -->
+        <tr>
+            <!-- <td id="a">A</td>  td에 a라는 이름을 주어 css로 크기 등 변환가능-->
+            <td id="a" rowspan="3"></td>
+            <td id="a1"></td>
+            <td id="a2"></td>
+            <td id="a3"></td>
+            <td id="a4"></td>
+        </tr>
+        <tr>
+            <!-- <td id="b"></td> -->
+            <td id="b1"></td>
+            <td id="b2" colspan="3"></td>
+            <!-- <td id="b3"></td> -->
+            <!-- <td id="b4"></td> -->
+        </tr>
+        <!-- <tr class="a">  id와 같은 행위를 함 -->
+         <tr>
+            <!-- <td id="c"></td> -->
+            <td id="c1" colspan="4"></td>
+            <!-- <td id="c2"></td>
+            <td id="c3"></td>
+            <td id="c4"></td> -->
+        </tr>
+
+</table>
+
+
+    
+</body>
+</html>

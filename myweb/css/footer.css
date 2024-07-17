@@ -1,0 +1,57 @@
+ /* 스타일링 */
+ #footer {
+    /* background-color: #333; 배경색 */
+    background-color: mediumseagreen;
+    color: #fff; /* 텍스트 색상 */
+    padding: 20px 0; /* 상하 여백 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0; /* 문단의 위아래 마진 제거 */
+}
+
+footer a {
+    color: #fff; /* 링크 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    transition: color 0.3s; /* 색상 변화에 애니메이션 적용 */
+}
+
+.ul1 {
+    padding-left: 50px;
+}
+
+ul.ul1 li {
+    display: inline-block;
+    margin-right: 30px;
+    /* margin-top: 20px; */
+}
+
+li a:hover {
+    color: black; /* 호버 시 색상 변경 */
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-list {
+    display: flex;
+    justify-content: center;
+}
+
+#icon {
+    margin: 0 10px; /* 링크 간격 */
+    height: 25px;
+}
+#a {
+    /* SNS 아이콘 */
+    width: 20px;
+    height: 20px;
+  }
+

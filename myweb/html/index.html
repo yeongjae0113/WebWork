@@ -1,0 +1,173 @@
+<!-- 원본 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imgument</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/response.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+
+
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <dialog id="popupDialog">
+        <h3>예약</h3>
+        종목
+        <select name="MINCLASSNM" id="MINCLASSNM" onchange="toggleAreaSelect()">
+            <option value="">선택</option>
+            <option value="풋살">풋살</option>
+            <option value="축구">축구</option>
+            <option value="테니스">테니스</option>
+            <option value="야구">야구</option>
+            <option value="농구">농구</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        지역
+        <select name="AREANM" id="AREANM" disabled>
+            <option value="">선택</option>
+            <option value="강서구">강서구</option>
+            <option value="양천구">양천구</option>
+            <option value="구로구">구로구</option>
+            <option value="영등포구">영등포구</option>
+            <option value="금천구">금천구</option>
+            <option value="동작구">동작구</option>
+            <option value="관악구">관악구</option>
+            <option value="서초구">서초구</option>
+            <option value="강남구">강남구</option>
+            <option value="송파구">송파구</option>
+            <option value="강동구">강동구</option>
+            <option value="마포구">마포구</option>
+            <option value="용산구">용산구</option>
+            <option value="성동구">성동구</option>
+            <option value="광진구">광진구</option>
+            <option value="중랑구">중랑구</option>
+            <option value="동대문구">동대문구</option>
+            <option value="중구">중구</option>
+            <option value="서대문구">서대문구</option>
+            <option value="은평구">은평구</option>
+            <option value="종로구">종로구</option>
+            <option value="성북구">성북구</option>
+            <option value="강북구">강북구</option>
+            <option value="노원구">노원구</option>
+            <option value="도봉구">도봉구</option>
+        </select>
+
+
+        <br><br>
+        <br><br>
+        <button type="button" onclick="sendValue();">정보 가져오기</button>
+        <button onclick="closePopup()">닫기</button>
+    </dialog>
+
+    <div class="background background1">
+
+        <div></div>
+
+
+
+        <!-- 게시판 -->
+        <div class="board-768">
+            <div class="slideshow-container img-768">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 4</div>
+                    <img class="img img-768" src="../img/농구.jpg">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img class="img img-768" src="../img/야구.jpg">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img class="img img-768" src="../img/축구.jpg">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img class="img img-768" src="../img/테니스.jpg">
+                    <div class="text">Caption Four</div>
+                </div>
+
+                <a class="prev prev-768" onclick="plusSlides(-1)">❮</a>
+                <a class="next next-768" onclick="plusSlides(1)">❯</a>
+
+            </div>
+            <br>
+
+            <div id="divdot">
+                <span class="dot dot-768" onclick="currentSlide(1)"></span>
+                <span class="dot dot-768" onclick="currentSlide(2)"></span>
+                <span class="dot dot-768" onclick="currentSlide(3)"></span>
+                <span class="dot dot-768" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+
+
+
+        <div class="score-img">
+            <div class="score-img1 epl-768">
+                <h3>프리미어리그 2023/24시즌</h3>
+                <a href="https://sports.news.naver.com/wfootball/record/index?category=epl&year=2023&tab=team"><img class="epl sports" src="../img/EPL.jpg" alt="축구">
+                </a></div>
+            <div class="score-img1 epl-768">
+                <h3>KBO 2023/24시즌</h3>
+                <a href="https://sports.news.naver.com/kbaseball/record/index?category=kbo&year=2024"><img class="kbo sports" src="../img/KBO.jpg" alt="야구">
+                </a></div>
+        </div>
+
+        <div class="news-t">News</div>
+        <div class="divNews">
+            <div class="nimg">
+                <a href="https://m.sports.naver.com/wfootball/article/311/0001726462"><img
+                        src="../img/뉴스1.jpg" alt="뉴스 1"></a>
+                <a href="https://m.sports.naver.com/basketball/article/076/0004145016"><img
+                        src="../img/뉴스2.jpg" alt="뉴스2"></a>
+                <a href="https://m.sports.naver.com/golf/article/001/0014688176"><img
+                        src="../img/뉴스3.jpg" alt="뉴스3"></a>
+                <a href="https://m.sports.naver.com/kbaseball/article/410/0000998509"><img
+                        src="../img/뉴스4.jpg" alt="뉴스4"></a>
+            </div>
+
+            <div>
+                <div class="newsfont">
+                    <p>"아스널! 보고있나?" 홈구장서 맨시티 응원 '미친 토트넘'팬들</p>
+                    <p>'요키치 40P-13A 원맨쇼' 덴버, 컨퍼런스 파이널까지 1승 남았다</p>
+                    <p>타이거 우즈 "몸은 건강하고 우승할 수 있다"</p>
+                    <p>한화 야구 너무 안 풀린다, 타구에 오른 손목 맞고 강판된 페냐…</p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div>
+    <div id="footer"></div>
+
+    </div>
+
+    <script src="../javascript/footer.js"></script>
+    <script src="../javascript/header.js"></script>
+    <script src="../javascript/menu.js"></script>
+    <script src="../javascript/board.js"></script>
+    <script src="../javascript/reserve.js"></script>
+</body>
+
+</html>

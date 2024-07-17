@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Form 만들기 과제</title>
+</head>
+<!-- 
+	https://docs.google.com/presentation/d/1TTkjsf5v4PRErwmT2wXJ8VVM_L1pUglJbYSLLdEdQ-A/edit#slide=id.p
+
+ -->
+<style>
+	div {
+		width: 4x;
+		height: 50px;
+		border: 2px solid black;
+	}
+</style>
+
+<body>
+
+	<form action="">
+		<table>
+
+			<h2>주문자 정보 입력</h2>
+
+			<th>주문자 정보</th>
+			<td>
+				<p style="font-size: 12px;"> 비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.
+					<button type="button">휴대폰 인증</button>
+					<button type="button">아이핀 인증</button>
+				</p>
+			</td>
+			<tr>
+				<th>주소</th>
+				<td>
+					<input type="text" id="address" placeholder="" readonly size="7" disabled=true>
+					<button type="button">주소 찾기</button>
+				</td>
+			</tr>
+
+			<th></th>
+			<td>
+				<input type="text" id="address" name="address" placeholder="" readonly size="80" disabled=true>
+			</td>
+
+			<tr>
+				<th></th>
+				<td>
+					<input type="text" id="address" name="address" size="80">
+				</td>
+			</tr>
+			<tr>
+				<th>휴대전화</th>
+				<td>
+					<select name="number" id="">
+						<option value="010">010</option>
+						<option value="011">011</option>
+					</select>
+					-
+					<input type="tel" id="phone1" name="phone1" size="6">
+					-
+					<input type="tel" id="phone2" name="phone2" size="6">
+					<input type="checkbox" checked> SMS 수신동의
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" size="15"> @
+					<input type="text" size="15">
+					<select name="" id="">
+						<option>직접입력</option>
+						<option value="naver.com">naver.com</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="duam.net">duam.net</option>
+						<option value="hanmail.com">hanmail.com</option>
+					</select>
+
+					<p style="font-size: 10px;">*SK플래닛(주)는 통신판매중개자로서 통신판매의 당사자가 아니며,개발판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는
+						일체의 책임을 지지 않습니다</p>
+				</td>
+			</tr>
+		</table>
+
+		<br><br>
+
+		<table>
+			<h2>배송지 정보 입력</h2>
+
+			<th>배송지 선택</th>
+
+
+			<td>
+				<button type="button">주문자 정보와 동일</button>
+			</td>
+
+			<tr>
+				<th>받으시는 분</th>
+				<td>
+					<input type="text" size="7">
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>
+					<input type="text" id="address" placeholder="" readonly size="7" disabled=true>
+					<button type="button">주소 찾기</button>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<input type="text" id="address" name="address" placeholder="" readonly size="76" disabled=true>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<input type="text" id="address" name="address" size="76">
+				</td>
+			</tr>
+			<tr>
+				<th>휴대전화</th>
+				<td>
+					<select name="number" id="">
+						<option value="010">010</option>
+						<option value="011">011</option>
+					</select>
+					-
+					<input type="tel" id="phone1" name="phone1" size="6">
+					-
+					<input type="tel" id="phone2" name="phone2" size="6">
+					<input type="checkbox" checked> 안심번호 사용(무료)
+					<input type="checkbox"> 집전화 추가 입력
+				</td>
+			</tr>
+			<tr>
+				<th>배송시 요구사항</th>
+				<td>
+					<input type="text" size="76"> (0자/50자)
+					<p style="font-size: 12px;">*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다</p>
+				</td>
+			</tr>
+		</table>
+
+		<br><br>
+
+		<table>
+			<h2>결제 정보 입력</h2>
+			<tr>
+				<th>결제방식</th>
+			</tr>
+			<tr>
+				<th>신용카드</th>
+				<td>
+					<input type="radio" name="creditcard" checked> 신용카드(일반)
+					<input type="radio" name="creditcard"> 신용카드(법인)
+					<input type="radio" name="creditcard"> 해외발급카드
+				</td>
+			</tr>
+			<tr>
+				<th>현금결제</th>
+				<td>
+					<input type="radio" name="cash"> 무통장입금
+					<input type="radio" name="cash"> 실시간계좌이체
+				</td>
+			</tr>
+			<tr>
+				<th>카드선택</th>
+				<td>
+					<select name="card" id="">
+						<option value="">선택하세요</option>
+						<option value="s">신한</option>
+						<option value="n">농협</option>
+						<option value="k">국민</option>
+						<option value="h">하나</option>
+						<option value="w">우리</option>
+						<option value="t">토스</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>할부방식</th>
+				<td>
+					<select name="pay" id="">
+						<option value="pay1">일시불</option>
+						<option value="5">5개월</option>
+						<option value="9">9개월</option>
+						<option value="12">12개월</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>결제안내</th>
+				<td>
+					<button type="button">간편결제안내</button>
+					<button type="button">공인인증안내</button>
+					<button type="button">안전결제안내</button>
+					<button type="button">안심클랙안내</button>
+					<button type="button">해외발급카드안내</button>
+				</td>
+		</table>
+
+	</form>
+
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

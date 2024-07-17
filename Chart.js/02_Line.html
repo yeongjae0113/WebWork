@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Line Chart</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+	<h2>Line Chart</h2>
+	<div>
+		<canvas id="MyChart1"></canvas>
+	</div>
+</body>
+<script>
+	const myChart1 = document.getElementById('MyChart1');
+
+	const labels = ['1월', '2월', '3월', '4월', '5월', '6월', '7월'];
+
+	const data = {
+		labels: labels, 
+		datasets: [{
+			label: '월매출',
+			data: [65, 59, 80, 81, 56, 55, 40],
+			backgroundColor: 'rgb(75, 192, 192)',
+			tension: 0.2,
+		}],
+	};
+
+	const config1 = {
+		type: 'line',   // line chart
+		data: data,
+	};
+
+	const chart1 = new Chart(myChart1, config1);
+</script>
+
+</html>

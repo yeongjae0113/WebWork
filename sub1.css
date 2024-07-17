@@ -1,0 +1,45 @@
+#sub {
+    width: 7%;
+    /* 첫 번째 구역의 너비를 20%로 설정 */
+    float: left;
+    /* 왼쪽 정렬 */
+    box-sizing: border-box;
+    /* 요소의 크기를 박스 모델의 크기로 설정 */
+    padding: 10px;
+    /* 내부 여백 설정 */
+}
+
+.sub1 {
+    width: 93%;
+    /* 두 번째 구역의 너비를 80%로 설정 */
+    float: left;
+    /* 왼쪽 정렬 */
+    box-sizing: border-box;
+    /* 요소의 크기를 박스 모델의 크기로 설정 */
+    padding: 10px;
+    /* 내부 여백 설정 */
+}
+.th{
+    background-color:mediumseagreen;
+}
+
+.custom-style {     /* 정보 출력란 */
+    text-align: center;
+}
+.select-button {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    /* background-color: #007bff; */
+    /* 파란색 */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.select-button:hover {
+    background-color:lightslategrey;
+    /* 마우스 호버시 더 진한 파란색 */
+} 

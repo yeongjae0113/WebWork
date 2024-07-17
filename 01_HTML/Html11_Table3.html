@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html>
+<head>
+<meta charset=utf-8>
+<title>table 연습</title>
+
+<style>
+
+	table, td, th {			
+		border: 2px solid black;
+		border-collapse: collapse;	/* border 간격 붙이기 */
+	}
+	
+	table {
+		width: 50%;
+	}
+	
+	td, th {
+		padding: 30px;	/* 내부여백 */
+	}
+	
+	
+	</style>
+
+</head>
+	<body>
+		<table>
+			<tbody>
+			<tr>
+				<td rowspan="3"></td>	
+				<td colspan="3"></td>
+				<!-- <td></td> -->
+				<!-- <td></td> -->
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td colspan="3"></td>	
+				<!-- <td></td> -->
+				<!-- <td></td> -->
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td></td>	
+				<td></td>
+				<td></td>
+			</tr>
+			</tbody>
+		</table>
+
+	<br><br><br>
+
+	<table>
+		<tbody>
+		<tr>
+			<td rowspan="3"></td>	
+			<td colspan="3"></td>
+			<!-- <td></td> -->
+			<!-- <td></td> -->
+		</tr>
+		<tr>
+			<!-- <td></td> -->
+			<td colspan="2"></td>	
+			<td></td>
+			<!-- <td></td> -->
+		</tr>
+		<tr>
+			<!-- <td></td> -->
+			<td></td>	
+			<td></td>
+			<td></td>
+		</tr>
+		</tbody>
+	</table>
+
+	<br><br><br>
+
+	<table>
+		<tbody>
+		<tr>
+			<td colspan="2"></td>	
+			<td colspan="2" rowspan="2"></td>
+			<!-- <td></td> -->
+			<!-- <td></td> -->
+			<td rowspan="3"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<!-- <td></td>	 -->
+			<!-- <td></td> -->
+			<!-- <td></td> -->
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<!-- <td></td>	 -->
+			<td></td>	
+			<td></td>
+			<!-- <td></td> -->
+		</tr>
+		</tbody>
+	</table>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</body>
+</html>

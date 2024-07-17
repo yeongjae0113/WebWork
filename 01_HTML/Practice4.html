@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    td#a {
+        text-align: center;
+    }
+
+    td#b {
+        font-size: 14px;
+    }
+
+    button#c {
+        font-size: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 2px solid gray;
+        border-top: 3px solid black;
+    }
+    
+    .bold-text {
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+</style>
+
+<body>
+    <table>
+        <h2>주문자 정보 입력</h2>
+
+        <tr>
+            <td class="bold-text" style="width: 125px; height: 40px;">주문자 정보</td>
+            <td style="font-size: 12px;">비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다
+                <button>휴대폰인증</button>
+                <button>아이피인증</button>
+            <td style="width: 110px;"></td>
+            </td>
+        </tr>
+        <tr>
+            <td class="bold-text">주소</td>
+            <td>
+                <input type="text" style="width: 70px;" disabled="true">
+                <button>주소찾기</button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            <td>
+                <input type="text" style="width: 550px;" disabled="true">
+            </td>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            <td>
+                <input type="text" style="width: 550px;">
+            </td>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="bold-text">휴대전화</td>
+            <td>
+                <select name="" id="" style="height: 21px;">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                </select> -
+                <input type="text" style="width: 65px"> -
+                <input type="text" style="width: 65px;">
+                <span style="display: inline-flex; align-items: center;">
+                    <label style="font-size: 12px;">
+                        <input type="checkbox" checked>SMS수신동의
+                    </label>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="bold-text">이메일</td>
+            <td>
+                <input type="text" style="width: 110px;"> @
+                <input type="text" style="width: 110px;">
+                <select name="" id="">
+                    <option value="input">직접입력</option>
+                    <option value="gmail">gmail.com</option>
+                    <option value="naver">naver.com</option>
+                    <option value="daum">daum.net</option>
+                    <option value="hanmail">hanmail.com</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        </tr>
+        <tr style="height: 10px;"></tr>
+    </table>
+    <p colspan="3" style="font-size: 10px;">*SK플래닛(주)는 통신판매중개자로서 통신판매의 당사자가 아니며,
+        개별판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 이레의 책임을 지지 않습니다.
+    </p>
+    <table>
+        <h2>배송지 정보 입력</h2>
+        <tr style="background-color:rgb(240, 240, 240); height: 50px;">
+            <td class="bold-text" style="width: 125px;">배송지선택</td>
+            <td><button>주문자 정보와 동일</button></td>
+        </tr>
+        <tr>
+            <td class="bold-text">받으시는 분</td>
+            <td><input type="text" style="width: 70px;"></td>
+        </tr>
+        <tr>
+            <td class="bold-text">주소</td>
+            <td>
+                <input type="text" style="width: 70px;" disabled="true">
+                <button>주소찾기</button>
+                <label style="font-size: 12px;">
+                    <input type="checkbox">배송지목록에 추가
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="text" style="width: 550px;" disabled="true">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="height: 45px; vertical-align: top;" >
+                <input type="text" style="width: 550px;">
+            </td>
+        </tr>
+        <tr>
+            <td class="bold-text">휴대전화</td>
+            <td>
+                <select name="" id="" style="height: 21px;">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                </select> -
+                <input type="text" style="width: 65px"> -
+                <input type="text" style="width: 65px;">
+                <label style="font-size: 12px;">
+                    <input type="checkbox" checked>안심번호 사용(무료)
+                    <input type="checkbox">집전화 추가 입력
+                </label>
+        </tr>
+        <tr>
+            <td class="bold-text">배송시요구사항</td>
+            <td>
+                <label style="font-size: 12px;">
+                    <input type="text" style="width: 550px;">(0자/50자)
+                </label>
+            </td>
+        </tr>
+        <tr style="height: 50px;">
+            <td></td>
+            <td colspan="2" style="font-size: 12px; color: blue; vertical-align: top;">*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</td>
+            <td style="width: 30px;"></td>
+        </tr>
+        <tr style="height: 10px;"></tr>
+    </table>
+
+    <table>
+        <colgroup>
+            <col style="width: 22%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <h2>결제 정보 입력</h2>
+        <tr style="background-color:rgb(240, 240, 240); height: 35px;">
+            <td id="a" class="bold-text" style="height: 40px;">신용카드</td>
+            <td id="b">
+                <input type="radio" checked style>신용카드(일반)
+            </td>
+            <td id="b">
+                <input type="radio">신용카드(법인)
+            </td>
+            <td id="b">
+                <input type="radio">해외발급카드
+            </td>
+        </tr>
+        <tr style="background-color:rgb(240, 240, 240); height: 35px;">
+            <td id="a" class="bold-text" style="height: 40px;">현금결제</td>
+            <td id="b">
+                <input type="radio">무통장입금
+            </td>
+            <td id="b">
+                <input type="radio">실시간계좌이체
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="a" class="bold-text" style="height: 35px;">카드선택</td>
+            <td>
+                <select name="" id="">
+                    <option value="">선택하세요</option>
+                    <option value="n">농협</option>
+                    <option value="w">우리</option>
+                    <option value="s">신한</option>
+                    <option value="k">기업</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="a" class="bold-text" style="height: 35px;">할부방식</td>
+            <td>
+                <select name="" id="">
+                    <option value="i">일시불</option>
+                    <option value="3">3개월할부</option>
+                    <option value="6">6개월할부</option>
+                    <option value="12">12개월할부</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="a" class="bold-text" style="height: 35px;">결제안내</td>
+            <td colspan="4">
+                <button id="c" style="color: red; border-color: red;">간편결제안내</button>
+                <button id="c">공인인증안내</button>
+                <button id="c">안전결제안내</button>
+                <button id="c">안심클릭안내</button>
+                <button id="c">해외발급카드안내</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>
