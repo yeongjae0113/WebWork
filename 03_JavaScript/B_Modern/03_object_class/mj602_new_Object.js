@@ -61,7 +61,7 @@ console.log('*'.repeat(30));
         // Person 또한 Object 타입이다.
 }
 
-// protytype 은 JS 에서 매우 중요!!!
+    // protytype 은 JS 에서 매우 중요!!!
 //  JS 언어 는 prototype 을 아는것에서부터 시작한다.
 
 
@@ -69,7 +69,7 @@ console.log('*'.repeat(30));
 // JS 가 객체지향 언어 기능을 가지게 되었다는 뜻은 아니다.
 // class 도 결국 prototype 체인 기능을 활용하여 구현할 뿐이다.
 
-    
+
 //────────────────────────────────────────────────────────────────────
 console.log("\n[프로그램 종료]");
 

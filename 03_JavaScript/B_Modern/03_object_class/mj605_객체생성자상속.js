@@ -13,7 +13,26 @@
 //------------------------------------------
 // 상속을 사용하지 않는 경우
 {
-  // TODO
+  console.log('상속을 사용하지 않는 경우');
+
+  function Dog(name, sound) {
+    this.type = '개';
+    this.name = name;
+    this.sound = sound;
+  }
+
+  function Cat(name, sound) {
+    this.type = '고영희';
+    this.name = name;
+    this.sound = sound;
+  }
+
+  Dog.prototype.say = function() {
+    console.log(`Dog: ${this.type}, ${this.name}, ${this.sound}`);
+  }
+
+  let dog = new Dog("멍멍이", "왈왈");
+  dog.say();
 }
 
 {
