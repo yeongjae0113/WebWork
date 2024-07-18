@@ -60,7 +60,7 @@ const cat = {
     sound: "야용~",
 };
 
-cat.say1 = dog.say1;    // cat 도 say1 객체를 가질 수 있게 됨
+cat.say1 = dog.say1;    // cat 도 say1 객체를 가질 수 있게 됨 --> dog.say1 객체를 복사하여 cat.say1 에 대입.
 
 dog.say1();     // say1() 의 this 는 dog 에 연결
 cat.say1();     // say1() 의 this 는 cat 에 연결

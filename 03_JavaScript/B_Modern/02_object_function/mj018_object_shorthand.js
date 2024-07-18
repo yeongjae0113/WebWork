@@ -13,7 +13,7 @@ console.log("obj =", obj);
 // ES6 의 object-shorthand 문법 (단축 속성명)이라고 부릅니다. (이름은 굳이 알아둘 필요는 없습니다..!)
 // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer
 
-a = "foo", b = 42, c = {};
+a = "foo", b = 42, c = {};  // -> a, b, c 변수 정의
 obj = {a, b, c};    // 속성명(property, key) 만 나열해도 된다!  언제? -> 동일 이름의 변수값이 정의되어 있다면 !!
 console.log('obj =', obj);
 

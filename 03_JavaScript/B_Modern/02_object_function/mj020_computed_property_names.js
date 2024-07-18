@@ -42,9 +42,9 @@
 }
 
 {
-  const items = ["A", "B", "C"];
+  const items = ["A", "B", "C"];    // [itmes] 로 ["A", "B", "C"] 가 toString 형태로 들어가면 key 로 변환 --> "Hello" 는 value
   const obj = {
-    [items]: "Hello",   // toString 값
+    [items]: "Hello",   // toString 값  --> key 와 value 가 있고. key 로 value 에 접근할 수 있지만 value 로 key 에 접근 불가
   };
   console.log("obj=", obj);
   console.log("items=", items)
