@@ -16,7 +16,20 @@
 {
   console.log("Promise() + reject 사용")
 
-  // TODO
+  const myPromise = new Promise((resolve, reject) => {
+    console.log("Promise() 생성: pending 상태");  
+    setTimeout(() => {
+      console.log("Promise: rejected 상태로 전환");
+      reject(new Error('베리베리'));   // ---> rejected 상태로 전환
+    }, 4000);
+  });
  
-  // console.log("다음 작업...")
+  myPromise
+    .then(() => {
+      console.log("then()");
+    })
+    .catch((e) => {    // rejected 상태가 되면 catch(callback) 호출
+        console.error("catch()" + e);
+    })
+  console.log("다음 작업...")
 }

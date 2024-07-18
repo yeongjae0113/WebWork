@@ -11,16 +11,35 @@
 
 {
   function p1(ms) {
-    // TODO
-  }
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(`p1 ${ms}ms 작업 fulfilled`);
+            resolve()
+        }, ms);
+    })
+}
 
-  // TODO
+
+  let start = Date.now();
+  Promise.all([p1(1000), p1(2000), p1(3000)])
+    .then(() => {
+      console.log(`p1] 모두 fulfilled 됨. 경과시간 ${Date.now() - start}ms`);
+    });
 }
 
 {
   function p2(ms) {
-    // TODO
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // recolve() 에 인자 넘어 보내기
+            resolve(ms)
+        }, ms);
+    })
   }
 
-  // TODO
+  Promise.all([p2(4000), p2(5000), p2(6000)])
+    .then((messages) => {   // messages: 위 resolve(value) 의 value 값(들) 을 '배열' 로 받는다
+      console.log();
+      console.log('p2] 모두 fullfilled 된 이후 실행', messages);
+    });
 }

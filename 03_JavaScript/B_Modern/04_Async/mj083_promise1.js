@@ -116,7 +116,7 @@ new Promise((resolve, reject) => {
 }
 
 //---------------------------------------------------------------
-// console.log('c] 다음 코드')
+console.log('c] 다음 코드')
 
 /*
     then 함수에서 다시 Promise 객체를 리턴하는 방법을 통해
@@ -124,4 +124,28 @@ new Promise((resolve, reject) => {
     then 에 함수를 넣는 '여러 다양한 방법'을 확인해봅시다.
 */
 
-// TODO
+{
+  function c() {    // Promise 객체를 리턴
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('c] Promise fulfilled 됨.');
+        resolve();
+      }, 3000);
+    });
+  }
+
+  c()   // ↓ 다 같은 동작을 하는 코드ㅌ
+  .then(() => {return c();})    // 3초 후 log 찍히고 3초후 다시 log 찍힘
+  .then(() => c())
+  .then(c)
+  .then(() => {
+    console.log('c2] 12000mx 이후에 호출됨');
+  })
+  ;
+
+    // 위와 같이 Promise 와 then() 으로 작성하는 것이
+    // callback hell 을 만드는 것보다
+    // 가독성 및 유지보수성이 좋다
+
+
+}

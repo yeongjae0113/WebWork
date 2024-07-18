@@ -8,6 +8,10 @@
 {
   //Promise.reject(reason)
 
-  // TODO
+  Promise.reject(new Error('유인아가 막내다'))
+    .then()
+    .catch(err => {
+      console.log(err.message);
+    })
   
 }

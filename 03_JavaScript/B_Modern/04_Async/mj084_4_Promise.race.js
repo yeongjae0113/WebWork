@@ -13,10 +13,21 @@
 
 {
     function p(ms) {
-        // TODO
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // recolve() 에 인자 넘어 보내기
+                resolve(ms)
+            }, ms);
+        })
     }
 
-    // tODO
+    let start = Date.now();
+    Promise.race([p(7000), p(8000), p(9000)])
+        .then(message => {     // 매개변수 message --> 가장 먼저 끝난 '한 개' 의 resolve(value) 의 value 값이 전달됨
+            console.log('가장 빨리 fullfilled 된 하나가 실행됩니다', message) // 출력해주기
+            console.log('경과시간:', Date.now() - start)
+    });
+
 }
 
 /*
