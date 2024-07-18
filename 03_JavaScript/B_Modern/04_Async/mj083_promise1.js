@@ -55,23 +55,65 @@ rejected (거부) 상태가 됩니다.
 // pending 상태에서, executor 함수 인자중 하나인 resolve 함수를 실행하면
 // fulfilled (이행) 상태가 됩니다.
 
-// TODO
+new Promise((resolve, reject) => {
+  // pending 상태 ..
+  // 비동기적인 상황 ..
+  // ... (작업 수행)
+  // 정상적으로 마무리 후
+  resolve();    // 첫 번째 매개변수인 resolve 호출  ---> fulfilled 상태 전환
+});
+
 
 // pending 상태에서, executor 함수 인자중 하나인 reject 함수를 실행하면
 // rejected (거부) 상태가 됩니다.
 
-// TODO
+new Promise((resolve, reject) => {
+  // pending 상태. 비동기 상태
+  // ...
+  // 어떤 예외/에러 상황에서
+  // reject()   // rejected 상태로 돌입.
+  // ※ node.js 에선 rejected 상태 처리 안하면 UnhandledPromiseRejection 발생
+});
 
 //---------------------------------------------
-// 다음의 Promise 객체는 1000ms 후에 fullfilled 됩니다.
+// 다음의 Promise 객체는 1000ms 후에 fulfilled 됩니다.
 
-// TODO
+new Promise((resolve, reject) => {
+
+  // pending, 비동기 상태
+
+  setTimeout(() => {
+    resolve();    // 1초 뒤 resolve() 실행 -> fulfilled 상태로 전환
+  }, 1000);
+
+});
 
 //----------------------------------------
-// p라는 Promise 객체가 fullfilled 되는 시점에 p.then 안에 설정한
+// p라는 Promise 객체가 fulfilled 되는 시점에 p.then(callback) 안에 설정한
 // callback 함수가 실행됩니다.
 
-// TODO
+{
+  const p = new Promise((resolve, reject) => {
+    console.log('p1] Promise 생성 : pending 상태');
+    // pending 상태
+
+
+    setTimeout(() => {
+      console.log('p2] fulfilled 상태로 전환');
+      resolve();   //  fulfilled 상태로 전환
+    }, 1000);
+
+
+  });
+
+  // .then(callback)
+  // 위의 Promise 객체가 fulfilled 상태가 되면 실행
+  p.then(() => {
+    console.log('p3] 1000ms 후에 fulfilled 되었습니다');
+  });
+
+  console.log('p4] 언제 찍힐까?');
+}
 
 //---------------------------------------------------------------
 // console.log('c] 다음 코드')

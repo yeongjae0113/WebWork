@@ -35,31 +35,50 @@ console.log();
 //   setTimeout(함수, 경과시간ms)
 //    https://developer.mozilla.org/ko/docs/Web/API/WindowTimers/setTimeout
 
-// console.log("setTimeout() 사용");
+console.log("setTimeout() 사용");
 {
   function work() {
-    // TODO
+    setTimeout(() => {
+      const start = Date.now();
+      for (let i = 0; i < 1000000000; i++) { }
+      const end = Date.now();
+      console.log("[B3] 작업 종료", end - start + "ms");
+    }, 0);
+
+    console.log('[B4] work() 종료');
   }
 
-  // console.log("[B]", "작업 시작!");
-  // work();
-  // console.log("[B]", "다음 작업");
+  console.log("[B]", "작업 시작!");
+  work();   // ---> [B4] work() 종료
+  console.log("[B]", "다음 작업");
 }
 
 console.log();
 
 /*
- work 함수가 끝난 다음에 어떤 작업을 처리하고 싶다면 어떻게 해야 할까요? 
+ work 함수의 비동기 작업이 끝난 다음에 어떤 작업을 처리하고 싶다면 어떻게 해야 할까요? 
  이럴 땐, 콜백 함수를 파라미터로 전달해주면 됩니다. 
  콜백 함수란, 함수 타입의 값을 파라미터로 넘겨줘서, 
  파라미터로 받은 함수를 특정 작업이 끝나고 호출을 해주는 것을 의미합니다.
  */
 // console.log("callback() 지정하기");
 {
-  // 매개변수로 함수를 받게 만든다
-  function work(TODO) {
-    // TODO
+  // 비동기 작업이 끝낞 ㅜ 실행 할 콜백함수를 매개변수로 받는다.
+  function work(callback) {
+    setTimeout(() => {
+      const start = Date.now();
+      for (let i = 0; i < 1000000000; i++) { }
+      const end = Date.now();
+      console.log("[C3] 작업 종료", end - start + "ms");
+      callback(end - start)   // 작업 종료 후 callback 호출
+    }, 0);
+
+    console.log('[C4] work() 종료');
   }
 
-  // TODO
+  console.log("[C1]", "작업 시작!");
+  work(ms => {
+    console.log(`[C5] ${ms}ms 작업 완료 후 진행한 callback`);
+  });
+  console.log("[C2]", "다음 작업");
 }

@@ -5,25 +5,31 @@
 // 출력하는 작업을 setTimeout 으로 구현
 {
     function increaseAndPrint(n, callback) {
-        // TODO
+        setTimeout(() => {
+            const increased = n + 1;
+            console.log(increased);
+            if(callback) {
+                callback(increased);
+            }
+        }, 1000);     // 1초 뒤 실행
     }
 
-    // TODO
+    increaseAndPrint(0, n => console.log("끝"));
+    console.log();
+
+    increaseAndPrint(0, n => {
+        increaseAndPrint(n, n => {
+            increaseAndPrint(n, n => {
+                increaseAndPrint(n, n => {
+                    increaseAndPrint(n, n => {
+                        console.log("끝")
+                    });
+                });
+            });
+        });
+    });
 
     console.log("비동기 다음 작업 진행...")
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+// Promise 를 사용하여 callback hell 을 벗어날수 있다.▷▷▷ to Next.
